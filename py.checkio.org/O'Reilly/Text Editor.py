@@ -17,7 +17,6 @@ class Text:
         self.font = text.font
 
     def show(self):
-        print(self.font)
         if (self.font != ''):
             font = '[' + self.font + ']'
         else:
