@@ -5,7 +5,7 @@ def friendly_number(number, base=1000, decimals=0, suffix='',
     Format a number as friendly text, using common suffixes.
     """
     prefix = 0
-    while abs(number)>base or prefix>=len(powers):
+    while abs(number)>base and prefix<len(powers):
         number, prefix = [number/base, [math.ceil(number/base),math.floor(number/base)][number>0]/1.0][decimals==0], prefix+1
 
     return "{:.{}f}{}{}".format(number, decimals, powers[prefix], suffix )
